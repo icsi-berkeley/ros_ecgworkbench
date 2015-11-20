@@ -1,2 +1,2 @@
 # ros_ecgworkbench
-The workbench package for ROS.
+The workbench package for ROS...
