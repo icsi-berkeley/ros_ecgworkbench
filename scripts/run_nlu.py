@@ -2,7 +2,9 @@
 import rospy
 import inspect
 
-from ecg_uas.ecg_uas import UserAgentSolver
+
+
+from ecg.ecg import UserAgentSolver
 
 if __name__=="__main__":
 
@@ -10,7 +12,7 @@ if __name__=="__main__":
 
     rospy.init_node("ecg_nlu")
 
-    uas = UserAgentSolver()
+    uas = NLUSystem()
 
     while True:
         print "Please enter text; press ENTER to quit."
