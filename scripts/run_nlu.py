@@ -1,8 +1,9 @@
 #!/usr/bin/env python
 import rospy
 import inspect
-
+from std_msgs.msg import *
 from ecg_uas.ecg_uas import UserAgentSolver
+from gazebo_msgs.msg import ModelStates,LinkStates
 
 if __name__=="__main__":
 
@@ -11,15 +12,25 @@ if __name__=="__main__":
     rospy.init_node("ecg_nlu")
 
     uas = UserAgentSolver()
+    pub = rospy.Publisher('/cqi/command', String, queue_size=5)
+    rospy.sleep(1)
 
     while True:
-        print "Please enter text; press ENTER to quit."
+        print "Please enter destination; press ENTER to quit."
+        print "Possible destinations: "
+        for item in uas.modelPoses.keys():
+            print item
+
         text = raw_input()
 
         if text == "":
             break
         
         command = uas.parse(text)
+
+        rospy.loginfo("Publishing CQI command " + command)
+
+        pub.publish(String(command))
 
         
     
