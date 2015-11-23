@@ -1,0 +1,4 @@
+
+[submodule "src/ecg/ecg_interface"]
+	path = src/ecg/ecg_interface
+	url = https://github.com/icsi-berkeley/ecg_interface
