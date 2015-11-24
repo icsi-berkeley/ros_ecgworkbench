@@ -1,48 +1,15 @@
 #!/usr/bin/env python
-import rospy
-import inspect
-<<<<<<< HEAD
-from std_msgs.msg import *
-from ecg_uas.ecg_uas import UserAgentSolver
-from gazebo_msgs.msg import ModelStates,LinkStates
-=======
+#import rospy
+import subprocess
+import os
 
-
-
-from ecg.ecg import UserAgentSolver
->>>>>>> 3a74ad6af6299623e78892fb1f48bb47f7f24466
-
+from robots.robots_ui import RobotUserAgent
 if __name__=="__main__":
+    path = os.getcwd() + "/../src/ecg/special_setup.sh"
+    #rospy.loginfo("Starting NLU system...")
+    #rospy.init_node("ecg_nlu")
 
-    rospy.loginfo("Starting NLU")
+    subprocess.Popen(["sh", path])
+    rua = RobotUserAgent(["AgentUI"])
+    rua.prompt()
 
-    rospy.init_node("ecg_nlu")
-
-<<<<<<< HEAD
-    uas = UserAgentSolver()
-    pub = rospy.Publisher('/cqi/command', String, queue_size=5)
-    rospy.sleep(1)
-=======
-    uas = NLUSystem()
->>>>>>> 3a74ad6af6299623e78892fb1f48bb47f7f24466
-
-    while True:
-        print "Please enter destination; press ENTER to quit."
-        print "Possible destinations: "
-        for item in uas.modelPoses.keys():
-            print item
-
-        text = raw_input()
-
-        if text == "":
-            break
-        
-        command = uas.parse(text)
-
-        rospy.loginfo("Publishing CQI command " + command)
-
-        pub.publish(String(command))
-
-        
-    
-    rospy.loginfo("NLU quit")
