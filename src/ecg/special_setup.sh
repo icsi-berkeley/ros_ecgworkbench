@@ -4,7 +4,7 @@
 
 export PATH_TO=$PWD/../src/ecg
 export ECG_FED=FED1
-python2.7 $PATH_TO/ecg_interface/robot_code/src/main/robots/cci_solver.py ProblemSolver &
+python2.7 $PATH_TO/ecg_interface/robot_code/src/main/robots/cci_solver.py ProblemSolver
 #python2.7 $PATH_TO/ecg_interface/robot_code/src/main/robots/cci_solver.py ProblemSolver &
 
 export JYTHONPATH=$JYTHONPATH:$PATH_TO/ecg_interface/framework_code/build/compling.core.jar:$PATH_TO/ecg_interface/framework_code/src/main/nluas/language
