@@ -12,7 +12,7 @@ if __name__=="__main__":
     #rospy.init_node("ecg_nlu")
 
     subprocess.Popen(["sh", path])
-    rua = RobotUserAgent(["AgentUI"])
-    rua.prompt()
+    #rua = RobotUserAgent(["AgentUI"])
+    #rua.prompt()
 
 
