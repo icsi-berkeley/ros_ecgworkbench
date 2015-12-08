@@ -5,7 +5,7 @@ import os
 
 from robots.robots_ui import RobotUserAgent
 if __name__=="__main__":
-	dir_name = os.path.dirname(os.path.realpath(__file__))
+    dir_name = os.path.dirname(os.path.realpath(__file__))
     path = dir_name + "/../src/ecg/special_setup.sh"
     #path = os.getcwd() + "/../src/ecg/special_setup.sh"
     rospy.loginfo("Starting NLU system...")
