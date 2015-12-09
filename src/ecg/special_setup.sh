@@ -10,7 +10,7 @@ python2.7 $PATH_TO/ecg_interface/robot_code/src/main/robots/ros_solver.py Proble
 #python2.7 $PATH_TO/$SOLVER &
 #python2.7 ecg_interface/robot_code/src/main/robots/ros_solver.py ProblemSolver &
 
-#export JYTHONPATH=$JYTHONPATH:$PATH_TO/ecg_interface/framework_code/build/compling.core.jar:$PATH_TO/ecg_interface/framework_code/src/main/nluas/language
-#jython -m analyzer $PATH_TO/ecg_interface/ecg_grammars/compRobots.prefs &
-#python2.7 $PATH_TO/ecg_interface/robot_code/src/main/robots/robots_ui.py AgentUI 
+export JYTHONPATH=$JYTHONPATH:$PATH_TO/ecg_interface/framework_code/build/compling.core.jar:$PATH_TO/ecg_interface/framework_code/src/main/nluas/language
+jython -m analyzer $PATH_TO/ecg_interface/ecg_grammars/compRobots.prefs &
+python2.7 $PATH_TO/ecg_interface/robot_code/src/main/robots/robots_ui.py AgentUI 
 
